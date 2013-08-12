@@ -1,1 +1,0 @@
-<?php die();?>1375421790s:338:"a:1:{i:0;a:14:{s:3:"tid";s:1:"8";s:5:"molds";s:7:"article";s:3:"pid";s:1:"0";s:9:"classname";s:12:"法律声明";s:5:"gourl";s:0:"";s:6:"litpic";s:0:"";s:5:"title";s:12:"法律声明";s:8:"keywords";s:0:"";s:11:"description";s:0:"";s:6:"orders";s:1:"0";s:5:"mrank";s:1:"0";s:7:"htmldir";s:0:"";s:8:"htmlfile";s:0:"";s:5:"mshow";s:1:"0";}}";

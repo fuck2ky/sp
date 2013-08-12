@@ -5,11 +5,12 @@ define("DOYO_PATH",APP_PATH."/include");
 $doyoConfig = array(
 
 'db' => array(
-'host' => 'localhost',			//数据库地址
+'host' => '127.0.0.1',			//数据库地址
+'socket' => '/tmp/mysql.sock',
 'port' => 3306,					//数据库端口
-'database' => 'wdoyocms',		//数据库名
+'database' => 'sanpellegrino',		//数据库名
 'login' => 'root',				//数据库帐号
-'password' => '123456',			//数据库密码
+'password' => '',			//数据库密码
 'prefix' => 'dy_',				//数据库表前缀
 ),
 
@@ -17,7 +18,7 @@ $doyoConfig = array(
 'version' => '2.2',
 'update' => '20120928',
 'auto_update' => 1,
-'http_path' => 'http://localhost',
+'http_path' => 'http://san.local',
 'site_title' => '圣培露',
 'site_keywords' => '圣培露',
 'site_description' => '圣培露',

@@ -1,6 +1,6 @@
 <?php
 return array(
-	'mode' => '0', //debug 开启php错误提示
+	'mode' => 'debug', //debug 开启php错误提示
 	'sp_core_path' => DOYO_PATH, 
 	'sp_drivers_path' => DOYO_PATH, 
 	'sp_include_path' => array( DOYO_PATH.'/ext' ),
@@ -68,7 +68,7 @@ return array(
 		DOYO_PATH.'/fun',
 	),
 	
-	'vercode' => 1,
+	'vercode' => 0,
 	
 	'rewrite' => array( 
 		'rewrite_open' => 0,
