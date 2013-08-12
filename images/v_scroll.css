@@ -1,0 +1,66 @@
+.scrollbar_content {
+	MARGIN: 3px 0px 10px; WIDTH: 95%
+}
+.scrollbar_content .viewport {
+	POSITION: relative; MARGIN: 10px auto 10px 0px; WIDTH: 90%; HEIGHT: 164px; OVERFLOW: hidden
+}
+.scrollbar_content .overview {
+	POSITION: absolute; PADDING-BOTTOM: 0px; LIST-STYLE-TYPE: none; MARGIN: 0px; PADDING-LEFT: 0px; PADDING-RIGHT: 0px; TOP: 0px; LIST-STYLE-IMAGE: none; PADDING-TOP: 0px; LEFT: 0px;LINE-HEIGHT: 18px;
+}
+.scrollbar_content .overview P {
+	LINE-HEIGHT: 18px; FONT-SIZE: 12px
+}
+.scrollbar_content .scrollbar {
+	BACKGROUND-IMAGE: url(../images/bg_slider_v.png); POSITION: relative; MARGIN-TOP: 10px; WIDTH: 4px; BACKGROUND-REPEAT: no-repeat; BACKGROUND-POSITION: center 50%; FLOAT: right
+}
+.scrollbar_content .track {
+	POSITION: relative; PADDING-BOTTOM: 0px; PADDING-LEFT: 1px; WIDTH: 12px; PADDING-RIGHT: 1px; HEIGHT: 100%; PADDING-TOP: 0px
+}
+.scrollbar_content .thumb {
+	POSITION: absolute; BACKGROUND-COLOR: #f2eedf; WIDTH: 4px; HEIGHT: 31px; OVERFLOW: hidden; TOP: 0px; CURSOR: pointer; LEFT: 0px
+}
+.scrollbar_content .thumb .end {
+	WIDTH: 12px; HEIGHT: 5px; OVERFLOW: hidden
+}
+.scrollbar_content .disable {
+	DISPLAY: none
+}
+.scrollbar_over {
+	MARGIN: 3px 0px 10px; WIDTH: 99%
+}
+.scrollbar_over .viewport {
+	POSITION: relative; MARGIN: 0px auto 0px 0px; WIDTH: 90%; HEIGHT: 118px; OVERFLOW: hidden;LINE-HEIGHT: 18px;
+}
+.scrollbar_over .overview {
+	POSITION: absolute; PADDING-BOTTOM: 0px; LIST-STYLE-TYPE: none; MARGIN: 0px; PADDING-LEFT: 0px; PADDING-RIGHT: 0px; TOP: 0px; LIST-STYLE-IMAGE: none; PADDING-TOP: 0px; LEFT: 0px;LINE-HEIGHT: 18px;
+}
+.scrollbar_over .scrollbar {
+	BACKGROUND-IMAGE: url(../images/bg_slider_v.png); POSITION: relative; MARGIN-TOP: 10px; WIDTH: 4px; BACKGROUND-REPEAT: no-repeat; BACKGROUND-POSITION: center 50%; FLOAT: right
+}
+.scrollbar_over .track {
+	POSITION: relative; PADDING-BOTTOM: 0px; PADDING-LEFT: 1px; WIDTH: 12px; PADDING-RIGHT: 1px; HEIGHT: 100%; PADDING-TOP: 0px
+}
+.scrollbar_over .thumb {
+	POSITION: absolute; BACKGROUND-COLOR: #f2eedf; WIDTH: 4px; HEIGHT: 31px; OVERFLOW: hidden; TOP: 0px; CURSOR: pointer; LEFT: 0px
+}
+.scrollbar_over .thumb .end {
+	WIDTH: 12px; HEIGHT: 5px; OVERFLOW: hidden
+}
+.scrollbar_over .disable {
+	DISPLAY: none
+}
+#brandNews .scrollbar_content {
+	WIDTH: 630px; FONT-FAMILY: Verdana, Geneva, sans-serif; FONT-WEIGHT: 200
+}
+#brandNews .thumb {
+	BACKGROUND-COLOR: #000
+}
+#brandNews .scrollbar {
+	BORDER-LEFT: #a3a3a3 1px solid; MARGIN-TOP: 50px; BACKGROUND: none transparent scroll repeat 0% 0%; HEIGHT: 250px
+}
+#brandNews .overview {
+	WIDTH: 100%
+}
+#brandNews .viewport {
+	WIDTH: 600px; HEIGHT: 450px
+}

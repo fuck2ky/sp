@@ -1,0 +1,21 @@
+.apple_overlay {
+	PADDING-BOTTOM: 0px; MARGIN-TOP: -226px; PADDING-LEFT: 0px; WIDTH: 700px; PADDING-RIGHT: 0px; DISPLAY: none; MARGIN-LEFT: -350px; FONT-SIZE: 12px; PADDING-TOP: 0px
+}
+.apple_overlay .close {
+	BACKGROUND-IMAGE: url(../images/bt_close.jpg); Z-INDEX: 100; POSITION: absolute; WIDTH: 89px; BOTTOM: 0px; BACKGROUND-REPEAT: no-repeat; HEIGHT: 19px; CURSOR: pointer; RIGHT: 35px
+}
+#overlay_scroll {
+	HEIGHT: 473px; COLOR: #efefef
+}
+#overlay_scroll IMG {
+	DISPLAY: block
+}
+#overlay_scroll .footer_image {
+	BACKGROUND-COLOR: #000; PADDING-LEFT: 10px; PADDING-RIGHT: 115px; FONT-FAMILY: Verdana, Geneva, sans-serif; FLOAT: none; HEIGHT: 28px; COLOR: #fff; line-height:14px;
+}
+#overlay_scroll .footer_image SPAN {
+	PADDING-BOTTOM: 5px; PADDING-LEFT: 5px; PADDING-RIGHT: 5px; PADDING-TOP: 5px
+}
+DIV.contentWrap {
+	POSITION: relative
+}

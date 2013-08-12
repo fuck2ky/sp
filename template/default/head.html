@@ -1,0 +1,34 @@
+<DIV id=header>
+<DIV class=wrapper>
+<!--CHOOSE LANGUAGES + SP WORLD -->
+<!-- LangCountrySelector.ascx -->
+<DIV class=side_languages>
+<!--SANPELLEGRINOWPRLD-->
+<DIV class=sanPellegrinoWorld><SPAN>请选择您的国家</SPAN> 
+    <DIV style="DISPLAY: none" class=list>
+    {loop table="links" taid="2"}
+    <a href="{$v['gourl']}" target="_blank">{$v['name']}</a>
+    {/loop}
+    </DIV>
+</DIV>
+<!--END SANPELLEGRINO WORLD-->
+<!--choose language-->
+<DIV class=chooseLanguages><SPAN>请选择您的语言</SPAN> 
+    <DIV style="DISPLAY: none" class=list>
+    {loop table="links" taid="3"}
+    <a href="{$v['gourl']}" target="_blank">{$v['name']}</a>
+    {/loop}
+    </DIV>
+</DIV>
+<!-- END CHOOSE LANGUAGES-->
+<BR clear=all></DIV>
+<!--END CHOOSE LANGUAGES-->
+<!--END CHOOSE LANGUAGES + SP WORLD-->
+<!--LOGIN + SOCIAL -->
+<DIV class=side_login>
+<!--SHARE-->
+<A class=share_fb href="http://weibo.com/sanpellegrinochina"  target="_blank">关注我们 </A>
+</DIV>
+<!--END LOGIN + SOCIAL -->
+</DIV>
+</DIV>

@@ -1,0 +1,11 @@
+{foreach $typemenu as $v}
+<a href="?c=member&a=mylist&tid={$v['tid']}">{$v['classname']}</a>
+{/foreach}
+{if($molds_message['isshow']==1)}
+<a href="?c=member&a=mymessage">我的{$molds_message['moldname']}</a>
+{/if}
+{if($fun_comment['isshow']==1)}
+<a href="?c=member&a=mycomment">我的{$fun_comment['name']}</a>
+{/if}
+<a href="?c=member&a=myinfo">修改资料</a>
+<a href="?c=member&a=out" class="c">退出登录</a>

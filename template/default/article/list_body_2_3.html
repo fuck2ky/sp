@@ -1,0 +1,165 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3c.org/TR/1999/REC-html401-19991224/loose.dtd">
+<HTML xmlns="http://www.w3.org/1999/xhtml">
+<HEAD>
+<TITLE>{$type['title']}-{$GLOBALS['S']['title']}</TITLE>
+<META content="text/html; charset=utf-8" http-equiv=Content-Type>
+<meta name="keywords" content="{$GLOBALS['S']['keywords']} " />
+<meta name="description" content="{$GLOBALS['S']['description']} " />
+<SCRIPT type=text/javascript src="{$GLOBALS['WWW']}images/jQuery.js"></SCRIPT>
+<SCRIPT type=text/javascript src="{$GLOBALS['WWW']}images/fade_image.js"></SCRIPT>
+<SCRIPT type=text/javascript src="{$GLOBALS['WWW']}images/jquery.easing.1.3.js"></SCRIPT>
+<SCRIPT type=text/javascript src="{$GLOBALS['WWW']}images/jquery.tinyscrollbar.min.js"></SCRIPT>
+<SCRIPT type=text/javascript src="{$GLOBALS['WWW']}images/jquery.pager.js"></SCRIPT>
+<SCRIPT type=text/javascript src="{$GLOBALS['WWW']}images/function.js"></SCRIPT>
+<SCRIPT type=text/javascript src="{$GLOBALS['WWW']}images/utils.js"></SCRIPT>
+<LINK rel=stylesheet href="{$GLOBALS['WWW']}images/style.css" media=screen>
+<LINK rel=stylesheet href="{$GLOBALS['WWW']}images/fonts.css" media=screen>
+<LINK rel=stylesheet type=text/css href="{$GLOBALS['WWW']}images/v_scroll.css" media=all>
+<LINK rel=stylesheet type=text/css href="{$GLOBALS['WWW']}images/overlay.css" media=all>
+<!-- GA -->
+<SCRIPT type=text/javascript>
+
+        var _gaq = _gaq || [];
+        _gaq.push(['_setAccount', 'UA-20279737-2']);
+        _gaq.push(['_trackPageview']);
+        //_gaq.push(['_trackPageloadTime']);
+
+        
+
+        (function () {
+            var ga = document.createElement('script'); ga.type = 'text/javascript'; ga.async = true;
+            ga.src = ('https:' == document.location.protocol ? 'https://ssl' : 'http://www') + '.google-analytics.com/ga.js';
+            var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(ga, s);
+        })();
+
+    </SCRIPT>
+<!-- / GA -->
+<SCRIPT type=text/javascript>
+    $(document).ready(function () {
+
+        var this_id
+        var this_alt
+        var index
+
+        $("a[rel]").click(function () {
+
+            this_id = $(this).find('img').attr('itemid')
+
+        })
+
+        //OVERLAYER GALLERY
+        $("a[rel]").overlay({
+
+            mask: {
+                color: '#000000',
+                loadSpeed: 200,
+                opacity: 0.9
+            },
+            fixed: false,
+            onClose: function () {
+
+                var api_timeline = $("#overlay_scroll").scrollable()
+                api_timeline.seekTo(0, 0)
+            },
+
+            onBeforeLoad: function () {
+				
+				$('#overlay_scroll .items').css('visibility','hidden')
+                $('#overlay_scroll .item').each(function () {
+
+                    this_alt = $(this).find('img').attr('itemid')
+
+                    if (this_id == this_alt) {
+
+                        index = $(this).index()
+
+                    }
+                })
+
+            },
+
+            onLoad: function () {
+
+                var api_timeline = $("#overlay_scroll").scrollable()
+                api_timeline.seekTo(index, 0)
+				$('#overlay_scroll .items').css('visibility','visible')
+            }
+
+        });
+
+
+
+    });	
+	
+</SCRIPT>
+
+<SCRIPT type=text/javascript>
+            trackEventFromFlash = function (category, action, label, value) {
+              //  var val = _gaq.push(['_trackEvent', category, action, label]);
+            } 
+    </SCRIPT>
+
+<META name=GENERATOR content="MSHTML 8.00.6001.19328"></HEAD>
+<BODY><!-- ET --><!-- / ET -->
+<!-- gallery per overlay -->
+<DIV id=overlay class="apple_overlay i_nav"><A class=close></A><!-- the external content is loaded inside this tag -->
+<DIV class=contentWrap>
+<DIV id=action_scroll_overlay><A class="prev browse"></A><A 
+class="next browse"></A></DIV>
+<DIV id=overlay_scroll class=scrollable>
+<DIV class=items>
+</DIV></DIV></DIV></DIV>
+<!--OVERLAYER--><!--OVERLAYER-->
+<DIV id=wrapper>
+<!--BRAND NEWS-->
+{include="brandnews.html"}
+<!--END BRAND NEWS-->
+<!--HEADER-->
+{include="head.html"}
+<!--END HEADER-->
+<!--MAIN CONTENT-->
+{loop table="classtype" tid="2" not="0" as="t"}
+<DIV style="BACKGROUND-IMAGE: url({$t['litpic']})" id=main_content>
+{/loop}
+<!--MAIN MENU-->
+<!--SECOND LEVEL-->
+{include="menu.html"}
+<!--END MAIN MENU-->
+<!--CONTENT SIDE-->
+<DIV id=side_content>
+<!--SECOND LEVEL-->
+<OL id=secondMenu>
+  {loop table="classtype" pid="2" not="0" as="t"}
+  <LI><A  href="{$t['url']}"{if($t['tid']==21)} class=selected {/if}>{$t['classname']}</A></LI>
+  {/loop}
+  <BR clear=all>
+</OL>
+<!--END SECONDO LEVEL--><!--THIRD LEVEL-->
+<DIV class="article_content generic_list">
+<H3>{$type['classname']}</H3>
+{$type['body']}
+<!--STORY ITEM-->
+<DIV id=generic_list_side><A class="browse prev"></A><A class="browse next"></A>
+<DIV id=story class=scrollable>
+<DIV class=items>
+<DIV class="item i_length">
+{loop table="article" tid="21" limit="0,3" as="v" orderby="orders|desc,id|desc"}
+<DIV class=list><A 
+href="{$v['url']}"><IMG 
+alt="{$v['title']}" src="{$v['litpic']}"> 
+<H3>{$v['title']}</H3>{$v['description']}</A></DIV>
+{/loop}
+</DIV>
+<DIV class="item i_length"><!-- start /WEBCONTROLS/SP/SPED_ITEM_list.ASCX -->
+{loop table="article" tid="21" limit="3,3" as="v"  orderby="orders|desc,id|desc" }
+<DIV class=list><A 
+href="{$v['url']}"><IMG 
+alt="{$v['title']}" src="{$v['litpic']}"> 
+<H3>{$v['title']}</H3>{$v['description']}</A></DIV>
+{/loop}
+</DIV></DIV></DIV></DIV><!--END STROY ITEM--></DIV><!--END ARTICLE--><!--GALLERY--><!--GALLERY--><!--END CONTENT LOADER--></DIV><!--END CONTENT SIDE--><BR 
+clear=all></DIV>
+<!--FOOTER-->
+{include="foot.html"}
+<!--END FOOTER--></DIV>
+</BODY></HTML>

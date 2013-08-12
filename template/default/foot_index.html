@@ -1,0 +1,62 @@
+<DIV id=footer>
+<!--HIGHLIGHTS-->
+<DIV id=highlight>
+<A id=trigger_highlight class=closed>亮点</A> 
+<DIV class=nav><A class="prev browse"></A><A class="next browse"></A>
+<BR clear=all></DIV>
+<DIV id=highlight_scroll class=scrollable>
+<DIV class=items>
+<DIV class="item i_length"> 
+{loop table="article" tid="27" limit="0,3" as="v" orderby="id|desc"}
+<SPAN class=highlight_detail><A class=image_anchor onClick="brandNewsLoad({$v['id']})">
+<IMG alt="{$v['title']}" src="{$v['litpic']}"></A> 
+<SPAN class=title_abs><A onClick="brandNewsLoad({$v['id']})"><SPAN>{$v['title']}</SPAN></A> </SPAN></SPAN>
+{/loop}
+
+</DIV>
+
+<DIV class="item i_length">
+{loop table="article" tid="27" limit="3,3" as="v" orderby="id|desc"}
+<SPAN class=highlight_detail><A class=image_anchor onClick="brandNewsLoad({$v['id']})">
+<IMG alt="{$v['title']}" src="{$v['litpic']}"></A> 
+<SPAN class=title_abs><A onClick="brandNewsLoad({$v['id']})"><SPAN>{$v['title']}</SPAN></A>  </SPAN></SPAN>
+{/loop}
+</DIV>
+<DIV class="item i_length">
+{loop table="article" tid="27" limit="6,3" as="v" orderby="id|desc"}
+<SPAN class=highlight_detail><A class=image_anchor onClick="brandNewsLoad({$v['id']})">
+<IMG alt="{$v['title']}" src="{$v['litpic']}"></A> 
+<SPAN class=title_abs><A onClick="brandNewsLoad({$v['id']})"><SPAN>{$v['title']}</SPAN></A> </SPAN></SPAN>
+{/loop}
+
+</DIV></DIV></DIV></DIV>
+<!--END HIGHLIGHTS-->
+<!--INNER FOOTER-->
+<DIV class=wrapper>
+<!--FOOTER MENU-->
+<OL class=menu>
+  <LI><A 
+  href="/index.php?c=article&a=type&tid=7">关于我们</A> </LI>
+  <LI><A 
+  href="/index.php?c=article&a=type&tid=8">法律声明</A> 
+  </LI>
+  <LI><A 
+  href="index.php?file=sitemap.html">网站地图</A> </LI>
+  <LI class=copy>Copyright - 2013 圣培露 S.p.A. - P.Iva 00753740158 
+</LI></OL><!--END FOOTER MENU--><!--LOGHI FOOTER--><!-- start /Webcontrols/LoghiFooter.ascx -->
+<DIV id=loghi_footer><A href="http://www.acquapanna.com/int/default.aspx" 
+target=_blank><IMG 
+style="BORDER-RIGHT-WIDTH: 0px; BORDER-TOP-WIDTH: 0px; BORDER-BOTTOM-WIDTH: 0px; BORDER-LEFT-WIDTH: 0px" 
+id=ctl00_ctl00_img1 title="Acqua Panna" alt="Acqua Panna" 
+src="images/ap_logo_footer.gif"></A> <A 
+href="http://www.finedininglovers.com/" target=_blank><IMG 
+style="BORDER-RIGHT-WIDTH: 0px; BORDER-TOP-WIDTH: 0px; BORDER-BOTTOM-WIDTH: 0px; BORDER-LEFT-WIDTH: 0px" 
+id=ctl00_ctl00_img2 title="Fine Dining Lovers" alt="Fine Dining Lovers" 
+src="images/fdl_logo_footer.gif"></A> <A 
+href="http://www.sanpellegrinobeverages.com/" target=_blank><IMG 
+style="BORDER-RIGHT-WIDTH: 0px; BORDER-TOP-WIDTH: 0px; BORDER-BOTTOM-WIDTH: 0px; BORDER-LEFT-WIDTH: 0px" 
+id=ctl00_ctl00_img3 title="Sparkling Fruit Beverages" 
+alt="Sparkling Fruit Beverages" src="images/sfb_logo_footer.gif"></A> 
+</DIV><!--END LOGHI FOOTER-->
+<BR clear=all>
+<P>说起圣培露，人们自然而然联想到美食与分享、快乐团聚与浓浓情谊。圣培露的气泡闪耀着柔和细密、令人沉醉的光泽，完美呼应着与朋友轻松聚会时的美妙时光，高雅口味映衬着独特的社交体验，美酒佳肴与欢声笑语完美交融，令人难以忘怀。</P></DIV><!--END INNER FOOTER--></DIV>

@@ -1,0 +1,225 @@
+<SCRIPT type=text/javascript>
+    $(document).ready(function () {
+        $('.list_items').each(function () {
+            $(this).find('.list_item:last').css({ 'margin-right': '0px' })
+        })
+
+
+        $('input[name="category"]:checked').removeAttr('checked')
+        
+        //brandNewsSearch(0);
+
+        var idnews = getParameterByName("onc");
+		var viewid = getParameterByName("v");
+        if (idnews) {
+            //show the layer            
+            
+            showLayer();
+            //loadthenews
+            setTimeout('brandNewsLoad(' + viewid + ')', 1000);
+            //brandNewsLoad(idnews);
+        }
+
+        bnLoadOverlayGallery();
+
+    })
+
+    showLayer = function () {
+        $('#trigger_news').trigger('click');
+    }
+
+    backToSearch = function () {
+        showSearch();
+    }
+
+    showSearch = function () {
+        $('#news').hide();
+        $('#hub').show();
+        $('#wait').hide();
+		$('#wait span.loading').text("")
+
+    }
+
+    showDetail = function () {
+        $('#news').show();
+        $('#hub').hide();
+        $('#wait').hide();
+		$('#wait span.loading').text("")
+
+    }
+
+    showWait = function () {
+        $('#news').hide();
+        $('#hub').hide();
+        $('#wait').show();
+		$('#wait span.loading').text("loading contents")
+
+    }
+
+    showPage = function (i) {
+        $('.page').hide();
+        $('.page').eq(i).show();
+        $('#pager>.pagination>a').removeClass('selected');
+        $('#pager>.pagination>a').eq(i).addClass('selected');
+    }
+    brandNewsSearch = function (pagenum) {
+		if (!$('#trigger_news').hasClass('opened')) {
+            showLayer();
+        }
+        if (pagenum<1)
+		{
+			pagenum=27;
+		}
+        //read the selected categories choices
+        showWait();
+
+        var queryData = "tid=" + pagenum;
+
+        //Differenza tra siti di brand /pages/ap/ oppure /pages/sp/
+        $.get('/index.php?c=article&a=type&' + queryData, function (data) {
+
+            $('#hub .din_content').html(data);
+
+
+            showSearch();
+
+            //old loaditems
+            $('.list_items').each(function () {
+
+                $(this).find('.list_item:last').css({ 'margin-right': '0px' })
+            })
+            showPage(0);
+
+        });
+    }
+
+    var bngaInstance;
+    var bnvdInstance;
+
+    bnLoadOverlayGallery = function () {
+        //OVERLAYER GALLERY
+
+
+        //remove the old galleries before moving the new ones
+        $("#aspnetForm > #bngallery").detach();
+        $("#aspnetForm > #bnvideo").detach();
+
+        //Move the element as child of page form
+        $("#aspnetForm").append($("div.overlay"));
+        //$("#aspnetForm").append($("#bngallery"));
+        //$("#aspnetForm").append($("#bnvideo"));
+
+        //OVERLAYER GALLERY
+        bngaInstance = $("#bngallery").overlay({
+            api: true,
+            mask: {
+                color: '#000000',
+                loadSpeed: 200,
+                opacity: 0.9
+                
+            },
+            left: '50%',
+            top: '50%',
+            fixed: true,
+            onLoad: function () {
+                try {
+                    var api_timeline = $("#overlay_scroll").scrollable()
+                } catch (x) {
+
+                }
+                //api_timeline.seekTo(index, 0)
+            }
+
+        });
+
+        bnvdInstance = $("#bnvideo").overlay({
+            api: true,
+            mask: {
+                color: '#000000',
+                loadSpeed: 200,
+                opacity: 0.9
+
+            },
+            left: '50%',
+            top: '50%',
+            fixed: true,
+            onLoad: function () {
+                try {
+                    var api_timeline = $("#overlay_scroll").scrollable()
+                } catch (x) {
+
+                }
+                //api_timeline.seekTo(index, 0)
+            }
+
+        });
+    }
+
+    brandNewsLoad = function (id) {
+		
+        if (!$('#trigger_news').hasClass('opened')) {
+            showLayer();
+        }
+
+        showWait();
+        //showWait();
+        //Differenza tra siti di brand /pages/ap/ oppure /pages/sp/
+        $.get('/index.php?c=article&id=' + id, function (data) {
+
+            $('#news').html(data);
+
+            showDetail();
+			
+          
+
+            if (!$('#trigger_news').hasClass('opened')) {
+                showLayer();
+            }
+
+            bnLoadOverlayGallery();
+             setTimeout(function(){
+                          $('.scrollbar_content').tinyscrollbar({ sizethumb: 21 });
+                    }, 1000);
+        });
+
+    }
+
+
+</SCRIPT>
+
+<DIV id=brandNews class=hub_bn>
+<DIV id=trigger_news></DIV>
+<DIV id=brand_container><!--FILTERS-->
+<DIV class=filter_side>
+<H2><img src="images/logo.png" /></H2>
+<!-- <span class="update_date">Update 07/01/2013 7.29.16</span>
+               <span class="close">chiudi bn</span> --><!--BRAND-->
+
+<DIV class=filter>
+<H3>栏目</H3><LABEL><INPUT onclick=brandNewsSearch(27) 
+value=BN_EVENTS type=radio name=category>事件列表</LABEL> <LABEL><INPUT 
+ onclick=brandNewsSearch(28) value=BN_NEWS type=radio  
+name=category>合作伙伴</LABEL></DIV><!--END NATION--><!--GEO-->
+<!--END GEO--></DIV><!--FILTERS--><!--RESULTS  HUB -->
+<DIV id=hub class=result_side>
+<H2>最新资讯</H2>
+<DIV class=din_content>
+<SCRIPT type=text/javascript>
+    $(document).ready(function () {
+        showPage(0);
+    }
+    );
+</SCRIPT>
+<!--LIST-->
+<DIV class=list_results>
+<!--NAVIGATION-->
+<DIV id=pager class=navigation><!--PAGINATION--></DIV>
+<!--END NAVIGATION-->
+</DIV>
+</DIV>
+</DIV><!--END RESULTS--><!--RESULTS HUB -->
+<DIV style="DISPLAY: none" id=news class=result_side><!-- DETAIL --></DIV>
+<DIV style="DISPLAY: none" id=wait class=result_side><!--<h2>Loading contents....</h2>--><SPAN 
+class=loading></SPAN>
+<P><IMG style="MARGIN-TOP: 68px; MARGIN-LEFT: 131px" alt="Loading contents.." 
+src="images/loading_background.gif"> </P></DIV></DIV><BR clear=all></DIV>

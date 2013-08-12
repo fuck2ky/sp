@@ -1,0 +1,14 @@
+<DIV id=mainMenu>
+<H2><A href="/"><IMG 
+title="" alt="San Pellegrino" 
+src="images/logo.jpg"></A></H2>
+<A class=trigger_menu><SPAN 
+class=close>导航</SPAN></A> 
+<OL class=list_voice>
+{loop table="classtype" mshow="1" limit="6"}
+  <LI><A href="{$v['url']}" {if ($v['tid']==$type['tid'])} class='selected'{/if}  {if ($v['tid']==$type['pid'])} class='selected'{/if}>{$v['classname']}</A></LI>
+{/loop}
+</OL>
+<H3><IMG title="Live in Italian" alt="Live in Italian" 
+src="images/payoff.jpg"></H3>
+</DIV>
