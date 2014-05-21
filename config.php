@@ -1,4 +1,5 @@
 <?php
+error_reporting(E_ALL ^ E_DEPRECATED);
 define("APP_PATH",dirname(__FILE__));
 define("DOYO_PATH",APP_PATH."/include");
 @date_default_timezone_set('PRC');
