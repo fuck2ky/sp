@@ -6,9 +6,9 @@ $GLOBALS['G_DY'] = spConfigReady(require(DOYO_PATH."/inc.php"),$doyoConfig);
 
 
 if('debug' == $GLOBALS['G_DY']['mode']){
-	define("SP_DEBUG",TRUE); 
+//	define("SP_DEBUG",TRUE);
 }else{
-	define("SP_DEBUG",FALSE); 
+//	define("SP_DEBUG",FALSE);
 }
 
 if (SP_DEBUG) {
