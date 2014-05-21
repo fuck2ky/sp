@@ -7,3 +7,4 @@
 *.swp
 include/cache
 .idea
+config.php
