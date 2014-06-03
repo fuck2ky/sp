@@ -143,7 +143,17 @@ class="next browse"></A></DIV>
 <DIV id=story class=scrollable>
 <DIV class=items>
 <DIV class="item i_length">
-{loop table="article" tid="27" limit="0,3" as="v" orderby="orders|desc,id|desc"}
+
+{sql sql="select * from dy_article where id!=84 AND tid='27' order by orders desc, id desc limit 0,3" as="v" }
+
+<DIV class=list><A
+ onClick="brandNewsLoad({$v['id']})"><IMG 
+alt="{$v['title']}" src="{$v['litpic']}">
+<H3>{$v['title']}</H3></A></DIV>
+{/sql}
+</DIV>
+<DIV class="item i_length"><!-- start /WEBCONTROLS/SP/SPED_ITEM_list.ASCX -->
+{loop table="article" tid="27" limit="4,3" as="v"  orderby="orders|desc,id|desc" }
 <DIV class=list><A 
  onClick="brandNewsLoad({$v['id']})"><IMG 
 alt="{$v['title']}" src="{$v['litpic']}"> 
@@ -151,15 +161,7 @@ alt="{$v['title']}" src="{$v['litpic']}">
 {/loop}
 </DIV>
 <DIV class="item i_length"><!-- start /WEBCONTROLS/SP/SPED_ITEM_list.ASCX -->
-{loop table="article" tid="27" limit="3,3" as="v"  orderby="orders|desc,id|desc" }
-<DIV class=list><A 
- onClick="brandNewsLoad({$v['id']})"><IMG 
-alt="{$v['title']}" src="{$v['litpic']}"> 
-<H3>{$v['title']}</H3></A></DIV>
-{/loop}
-</DIV>
-<DIV class="item i_length"><!-- start /WEBCONTROLS/SP/SPED_ITEM_list.ASCX -->
-{loop table="article" tid="27" limit="6,3" as="v"  orderby="orders|desc,id|desc" }
+{loop table="article" tid="27" limit="7,3" as="v"  orderby="orders|desc,id|desc" }
 <DIV class=list><A 
  onClick="brandNewsLoad({$v['id']})"><IMG 
 alt="{$v['title']}" src="{$v['litpic']}"> 
