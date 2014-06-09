@@ -96,6 +96,9 @@ class article extends syController
 		if($this->type['isindex']==1||$this->type['isindex']==2){
 			$w.=" where isshow=1 ";
 			$w.="and tid in(".$this->type['tid_leafid'].") ";
+
+            $w.="AND id NOT IN (84, 85) ";
+
 			if($this->syArgs('trait'))$w.="and trait like '%,".$this->syArgs('trait').",%' ";
 			$order=' order by orders desc,addtime desc,id desc';
 			$f=syDB('fields')->findAll(" molds='article' and types like '%|".$tid."|%' and lists=1 ");

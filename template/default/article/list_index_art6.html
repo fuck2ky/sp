@@ -144,7 +144,7 @@ class="next browse"></A></DIV>
 <DIV class=items>
 <DIV class="item i_length">
 
-{sql sql="select * from dy_article where id!=84 AND tid='27' order by orders desc, id desc limit 0,3" as="v" }
+{sql sql="select * from dy_article where id NOT IN (84,85) AND tid='27' order by orders desc, id desc limit 0,3" as="v" }
 
 <DIV class=list><A
  onClick="brandNewsLoad({$v['id']})"><IMG 
@@ -153,15 +153,15 @@ alt="{$v['title']}" src="{$v['litpic']}">
 {/sql}
 </DIV>
 <DIV class="item i_length"><!-- start /WEBCONTROLS/SP/SPED_ITEM_list.ASCX -->
-{loop table="article" tid="27" limit="4,3" as="v"  orderby="orders|desc,id|desc" }
-<DIV class=list><A 
+{loop table="article" tid="27" limit="5,3" as="v"  orderby="orders|desc,id|desc" }
+<DIV class=list><A
  onClick="brandNewsLoad({$v['id']})"><IMG 
 alt="{$v['title']}" src="{$v['litpic']}"> 
 <H3>{$v['title']}</H3></A></DIV>
 {/loop}
 </DIV>
 <DIV class="item i_length"><!-- start /WEBCONTROLS/SP/SPED_ITEM_list.ASCX -->
-{loop table="article" tid="27" limit="7,3" as="v"  orderby="orders|desc,id|desc" }
+{loop table="article" tid="27" limit="8,3" as="v"  orderby="orders|desc,id|desc" }
 <DIV class=list><A 
  onClick="brandNewsLoad({$v['id']})"><IMG 
 alt="{$v['title']}" src="{$v['litpic']}"> 
